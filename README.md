@@ -1,2 +1,2 @@
-# estudos-python
+# Estudos-python
 Estudos do curso da Udemy
