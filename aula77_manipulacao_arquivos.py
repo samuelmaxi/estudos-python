@@ -1,3 +1,5 @@
+import os
+
 # Criando arquivos com Python + Context Manager with
 # Usamos a função open para abrir
 # um arquivo em Python (ele pode ou não existir)
@@ -19,31 +21,43 @@
 # json.dump = Gera um arquivo json
 # json.load
 
-caminho_arquivo = 'aula77.txt'
+caminho_arquivo = "aula77.txt"
 
 
 # arquivo = open(caminho_arquivo, 'w')
 # #
 # arquivo.close()
 
-with open(caminho_arquivo, 'w+') as arquivo:
-    arquivo.write('Linha 1\n')
-    arquivo.write('Linha 2\n')
-    arquivo.writelines(
-        ('Linha 3\n', 'Linha 4\n')
-    )
-    print(arquivo.read())
-    print('Lendo')
-    arquivo.seek(0, 0)
-    print(arquivo.readline(), end='')
-    print(arquivo.readline().strip())
-    print(arquivo.readline().strip())
-    print('READLINES')
-    arquivo.seek(0, 0)
-    for linha in arquivo.readlines():
-        print(linha.strip())
+# with open(caminho_arquivo, "w+") as arquivo:
+#     print(type(arquivo))
+#     arquivo.write("Linha 1\n")
+#     arquivo.write("Linha 2\n")
+#     arquivo.writelines(("Linha 3\n", "Linha 4\n"))
+#     print(arquivo.read())
+#     print("Lendo")
+#     arquivo.seek(0, 0)
+#     print(arquivo.readline(), end="")
+#     print(arquivo.readline().strip())
+#     print(arquivo.readline().strip())
+#     print("READLINES")
+#     arquivo.seek(0, 0)
+#     for linha in arquivo.readlines():
+#         print(linha.strip())
 
 
-print('#' * 10)
-with open(caminho_arquivo, 'r') as arquivo:
-    print(arquivo.read())
+# print("#" * 10)
+# with open(caminho_arquivo, "r") as arquivo:
+#     print(arquivo.read())
+
+
+with open(caminho_arquivo, "w") as arquivo:
+    print(type(arquivo))
+    arquivo.write("Linha 1\n")
+    arquivo.write("Linha 2\n")
+    arquivo.writelines(("Linha 3\n", "Linha 4\n"))
+    arquivo.writelines(("Linha 3\n", "Linha 4\n"))
+    print("Lendo")
+
+# os.unlink(caminho_arquivo)
+# os.remove
+# os.rename(caminho_arquivo, "aula77-2.txt")
