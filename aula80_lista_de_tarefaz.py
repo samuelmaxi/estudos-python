@@ -15,7 +15,8 @@
 # Desfazer
 # Refazer
 
-
+todo = []
+last_task = []
 while True:
     print("1- Add | 2- Undo | 3- Redo | 4-List | 5- Quit")
     option = int(input("Enter a number from the option above: "))
@@ -27,36 +28,20 @@ while True:
             list_todo.append(item)
             return list_todo
 
-        todo = []
-
         task = input("Typed your task today: ")
         todo_new = add_task(task, todo)
-        add_task(task, todo_new)
 
         continue
     elif option == 2:
         print("undo".upper())
+        last_task = todo
+        last_task.pop()
     elif option == 3:
         print("redo".upper())
+        todo.append(task)
     elif option == 4:
         print("list".upper())
         print(todo)
     elif option == 5:
         print("quit".upper())
         break
-
-
-def add_task(item, list_todo):
-    list_todo.append(item)
-    return list_todo
-
-
-todo = []
-
-i = 1
-while i <= 2:
-    task = input("Typed your task today: ")
-    todo = add_task(task, todo)  # aqui que ta adicionand o lista
-    i += 1
-
-print(todo)
